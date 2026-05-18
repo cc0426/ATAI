@@ -1,3 +1,11 @@
+# Multi-source Soil Moisture Product Prediction Fusion
+
+This repository contains the implementation of the two-stage consensus feature learning framework proposed in:
+
+"Multi-source Soil Moisture Product Prediction Fusion Method Based on Two-stage Consensus Feature Learning"
+
+The framework integrates ERA5, CoLM, and SMCI soil moisture products through prediction-layer fusion.
+
 ## Environment
 
 The code was developed and tested with the following core dependencies:
