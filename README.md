@@ -101,15 +101,17 @@ python eval_stage2.py
 ```
 
 ---
+# Additional Scripts
 
+In addition to the main training and evaluation scripts, the repository also provides auxiliary scripts for ablation experiments, feature extraction, linear probing, fusion evaluation, and attention analysis.
 
-## Additional scripts
+---
 
-In addition to the main training and evaluation scripts, the repository also provides several auxiliary scripts for ablation experiments, linear probing, feature extraction, fusion evaluation, and attention analysis.
+## Ablation Experiments
 
-### Ablation experiments
+The following scripts train and evaluate different variants of the Stage-2 fusion model.
 
-The following scripts train and evaluate different variants of the Stage-2 fusion model:
+### Training
 
 ```bash
 python train_stage2_ablation_A.py
@@ -117,16 +119,61 @@ python train_stage2_ablation_B.py
 python train_stage2_ablation_C.py
 python train_stage2_ablation_D.py
 python train_stage2_ablation_E.py
-python analyze_attention.py 
-python analyze_attention_results.py  
-python eval_ablation_A.py  
-python eval_ablation_B.py  
-python eval_ablation_C.py  
-python eval_ablation_D.py  
-python eval_ablation_E.py  
-python eval_fusion.py  
-python eval_fusion_print.py  
-python extract_train_features.py  
-python linear_regression_eval.py  
-python linear_regression_train.py  
+```
 
+### Evaluation
+
+```bash
+python eval_ablation_A.py
+python eval_ablation_B.py
+python eval_ablation_C.py
+python eval_ablation_D.py
+python eval_ablation_E.py
+```
+
+These scripts are used to assess the contribution of different components in the proposed framework.
+
+---
+
+## Attention Analysis
+
+```bash
+python analyze_attention.py
+python analyze_attention_results.py
+```
+
+These scripts analyze the attention weights learned by the fusion model and examine the relative importance of different source products and learned representations.
+
+---
+
+## Feature Extraction
+
+```bash
+python extract_train_features.py
+```
+
+This script extracts latent representations learned by the Stage-1 models.
+
+---
+
+## Linear Probing
+
+```bash
+python linear_regression_train.py
+python linear_regression_eval.py
+```
+
+These scripts evaluate the information content and transferability of latent features using linear regression models.
+
+---
+
+## Fusion Evaluation
+
+```bash
+python eval_fusion.py
+python eval_fusion_print.py
+```
+
+These scripts evaluate and summarize the fusion performance of the proposed framework.
+
+---
