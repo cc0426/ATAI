@@ -213,12 +213,16 @@ These metrics are generated for:
 - Ablation experiments
 
 ---
+# Reproducibility
 
-## Analysis Outputs
+This repository includes:
 
-| File | Description |
-| :--- | :--- |
-| `metrics_summary.png` | Summary visualization of evaluation metrics |
-| `attention_weights.npy` | Attention analysis results (if generated) |
+- executable training and evaluation scripts,
+- environment configuration files,
+- sample input datasets,
+- example outputs,
+- and analysis scripts used in the manuscript.
+
+These resources are provided to facilitate reproducibility and validation of the reported results.
 
 ---
