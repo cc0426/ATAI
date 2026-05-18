@@ -39,3 +39,21 @@ python eval.py  #for stage1
 
 python eval_stage2.py #for stage2
 
+## Additional scripts
+
+In addition to the main training and evaluation scripts, the repository also provides several auxiliary scripts for ablation experiments, linear probing, feature extraction, fusion evaluation, and attention analysis.
+
+### Ablation experiments
+
+The following scripts train and evaluate different variants of the Stage-2 fusion model:
+
+```bash
+python train_stage2_ablation_A.py
+
+python train_stage2_ablation_B.py
+
+python train_stage2_ablation_C.py
+
+python train_stage2_ablation_D.py
+
+python train_stage2_ablation_E.py
