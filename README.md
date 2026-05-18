@@ -177,3 +177,48 @@ python eval_fusion_print.py
 These scripts evaluate and summarize the fusion performance of the proposed framework.
 
 ---
+# Outputs
+
+The framework generates multiple output files for prediction results, evaluation metrics, ablation experiments, and analysis tasks.
+
+## Prediction Outputs
+
+| File pattern | Description |
+| :--- | :--- |
+| `pred_*.npy` | Predicted soil moisture results |
+| `obs_*.npy` | Corresponding observation/reference data |
+| `pred_stage2_*.npy` | Prediction-layer fusion results |
+| `pred_ablation*.npy` | Predictions from ablation experiments |
+
+---
+
+## Evaluation Metrics
+
+The repository provides multiple evaluation metrics for different products and experiments.
+
+| File pattern | Description |
+| :--- | :--- |
+| `rmse_*.npy` | Root Mean Square Error (RMSE) |
+| `urmse_*.npy` | Unbiased RMSE |
+| `bias_*.npy` | Bias |
+| `r_*.npy` | Correlation coefficient |
+| `r2_*.npy` | Coefficient of determination (R²) |
+| `KGE_*.npy` | Kling-Gupta Efficiency (KGE) |
+
+These metrics are generated for:
+- ERA5
+- CoLM
+- SMCI
+- Stage-2 fusion results
+- Ablation experiments
+
+---
+
+## Analysis Outputs
+
+| File | Description |
+| :--- | :--- |
+| `metrics_summary.png` | Summary visualization of evaluation metrics |
+| `attention_weights.npy` | Attention analysis results (if generated) |
+
+---
