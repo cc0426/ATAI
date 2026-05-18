@@ -54,7 +54,9 @@ The framework requires the following datasets:
 Example validation data are provided in:
 
 ```text
-data/sample_input/
+**Dataset Name**: Multi-source Soil Moisture Product Prediction Fusion Dataset
+
+**Download Link**: https://doi.org/10.5281/zenodo.20048620
 ```
 
 ---
