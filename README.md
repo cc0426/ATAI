@@ -29,15 +29,19 @@ Create the environment using:
 conda env create -f environment.yml
 conda activate <environment_name>
 ```
-## Input Data
+---
+
+# Input Data
 
 The framework requires the following datasets:
 
-## Meteorological forcing data
-# ERA5 soil moisture product
-# CoLM soil moisture product
-# SMCI soil moisture product
-Supported formats NumPy(npy)
+- Meteorological forcing data
+- ERA5 soil moisture product
+- CoLM soil moisture product
+- SMCI soil moisture product
+
+## Supported formats
+- NumPy(npy)
 
 ## Run the model
 
