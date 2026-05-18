@@ -19,3 +19,20 @@ The code was developed and tested with the following core dependencies:
 
 The full environment configuration is available in `environment.yml`.
 
+## Run the model
+
+### Stage 1: Product-specific prediction learning
+
+python trainer1-era5.py
+python trainer1-colm.py
+python trainer1-smci.py
+
+### Stage 2: Prediction-layer fusion
+
+python trainer_stage2.py
+
+### Evaluation
+
+python eval.py  #for stage1
+python eval_stage2.py #for stage2
+
