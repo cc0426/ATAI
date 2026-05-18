@@ -33,10 +33,10 @@ conda activate <environment_name>
 
 The framework requires the following datasets:
 
-Meteorological forcing data
-ERA5 soil moisture product
-CoLM soil moisture product
-SMCI soil moisture product
+## Meteorological forcing data
+# ERA5 soil moisture product
+# CoLM soil moisture product
+# SMCI soil moisture product
 Supported formats NumPy(npy)
 
 ## Run the model
