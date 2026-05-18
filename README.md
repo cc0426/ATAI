@@ -43,6 +43,24 @@ The framework requires the following datasets:
 ## Supported formats
 - NumPy(npy)
 
+## Data characteristics
+
+| Item | Description |
+| :--- | :--- |
+| Spatial resolution | 0.25° |
+| Temporal resolution | Daily |
+| Study region | Northeast China |
+
+Example validation data are provided in:
+
+```text
+data/sample_input/
+```
+
+---
+
+
+
 ## Run the model
 
 ### Stage 1: Product-specific prediction learning
