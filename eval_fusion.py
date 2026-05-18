@@ -1,7 +1,5 @@
 import numpy as np
 
-
-# 保持原有的辅助函数不变
 def _rmse(y_true, y_pred):
     predanom = y_pred
     targetanom = y_true
@@ -49,9 +47,6 @@ def r2_score_corrcoef(y_true, y_pred):
 
 
 def cal_metrics(obs, pred, china_mask):
-    # 假设 obs 和 pred 都是 4D: (time, lat, lon, ?) 或 (time, lat, lon, time2)
-    # 根据原代码，循环顺序为 t (第三维索引), i (第一维), j (第二维)
-    # 因此指标数组形状为 (pred.shape[1], pred.shape[2], pred.shape[3])
     r2 = np.full((pred.shape[1], pred.shape[2], pred.shape[3]), np.nan)
     r = np.full((pred.shape[1], pred.shape[2], pred.shape[3]), np.nan)
     rmse = np.full((pred.shape[1], pred.shape[2], pred.shape[3]), np.nan)
@@ -59,9 +54,9 @@ def cal_metrics(obs, pred, china_mask):
     bias = np.full((pred.shape[1], pred.shape[2], pred.shape[3]), np.nan)
     urmse = np.full((pred.shape[1], pred.shape[2], pred.shape[3]), np.nan)
 
-    for t in range(pred.shape[3]):  # 第4维（可能是时间或变量）
-        for i in range(pred.shape[1]):  # 纬度
-            for j in range(pred.shape[2]):  # 经度
+    for t in range(pred.shape[3]):  
+        for i in range(pred.shape[1]): 
+            for j in range(pred.shape[2]):  
                 if china_mask[i, j] == 1:
                     obs_vals = obs[:, i, j, t]
                     pred_vals = pred[:, i, j, t]
@@ -75,43 +70,39 @@ def cal_metrics(obs, pred, china_mask):
 
 
 def main():
-    # 定义标签和预测的名称及对应文件（根据实际情况修改文件名）
+
     obs_names = ['colm', 'era5', 'smci']
     pred_names = ['colm', 'era5', 'smci','stage2_colm','stage2_era5','stage2_smci']
 
-    # 加载所有观测（标签）数据
     obs_data = {}
     for name in obs_names:
-        filename = f'obs_{name}.npy'  # 例如 obs_colm.npy
+        filename = f'obs_{name}.npy'  
         obs_data[name] = np.load(filename)
         print(f'Loaded {filename}, shape: {obs_data[name].shape}')
 
     # 加载所有预测数据
     pred_data = {}
     for name in pred_names:
-        filename = f'pred_{name}.npy'  # 例如 pred_colm.npy
+        filename = f'pred_{name}.npy' 
         pred_data[name] = np.load(filename)
         print(f'Loaded {filename}, shape: {pred_data[name].shape}')
 
-    # 加载掩码（二维数组，与空间维度对应）
+
     china_mask = np.load('/home/zhangcheng/Soil_Moisture/CML_FD/dataset/mask_Northeast_China.npy')
     print(f'Mask shape: {china_mask.shape}')
 
-    # 遍历所有标签-预测组合，计算并保存指标
+
     for obs_name in obs_names:
         for pred_name in pred_names:
             print(f'Calculating metrics for obs_{obs_name} vs pred_{pred_name}')
             obs = obs_data[obs_name]
             pred = pred_data[pred_name]
-            # 可选：检查形状是否一致
+
             if obs.shape != pred.shape:
                 print(f'Warning: shape mismatch: obs {obs.shape} vs pred {pred.shape}. Skipping.')
                 continue
-            # 使用示例
-
             r2, r, rmse, urmse, bias, KGE = cal_metrics(obs, pred, china_mask)
 
-            # 保存结果
             np.save(f'./r2_{obs_name}_{pred_name}.npy', r2)
             np.save(f'./r_{obs_name}_{pred_name}.npy', r)
             np.save(f'./rmse_{obs_name}_{pred_name}.npy', rmse)
