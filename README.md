@@ -23,13 +23,13 @@ The complete environment configuration is provided in:
 
 ```text
 environment.yml
-
+```
 Create the environment using:
 
 ```bash
 conda env create -f environment.yml
 conda activate <environment_name>
-
+```
 ## Run the model
 
 ### Stage 1: Product-specific prediction learning
