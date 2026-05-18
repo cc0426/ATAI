@@ -16,7 +16,6 @@ The code was developed and tested with the following environment:
 | :--- | :--- |
 | Python | 3.12.7 |
 | Conda | 24.9.2 |
-| Channels | defaults, main, r |
 | Key packages | torch, numpy 1.26.4, pandas 2.2.2, xarray 2023.6.0, netCDF4 1.7.2, scikit-learn 1.5.1, matplotlib 3.9.2, cartopy 0.25.0 |
 
 The complete environment configuration is provided in:
