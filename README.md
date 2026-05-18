@@ -49,11 +49,20 @@ The following scripts train and evaluate different variants of the Stage-2 fusio
 
 ```bash
 python train_stage2_ablation_A.py
-
 python train_stage2_ablation_B.py
-
 python train_stage2_ablation_C.py
-
 python train_stage2_ablation_D.py
-
 python train_stage2_ablation_E.py
+python analyze_attention.py 
+python analyze_attention_results.py  
+python eval_ablation_A.py  
+python eval_ablation_B.py  
+python eval_ablation_C.py  
+python eval_ablation_D.py  
+python eval_ablation_E.py  
+python eval_fusion.py  
+python eval_fusion_print.py  
+python extract_train_features.py  
+python linear_regression_eval.py  
+python linear_regression_train.py  
+
