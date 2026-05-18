@@ -167,7 +167,7 @@ These scripts evaluate the information content and transferability of latent fea
 
 ---
 
-## Fusion Evaluation
+## Metrics Evaluation
 
 ```bash
 python eval_fusion.py
