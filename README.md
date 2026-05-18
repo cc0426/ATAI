@@ -60,28 +60,48 @@ Example validation data are provided in:
 ```
 
 ---
+# Workflow
 
+The recommended execution order is:
 
+## Step 1: Train product-specific prediction models
 
-## Run the model
-
-### Stage 1: Product-specific prediction learning
-
+```bash
 python trainer1-era5.py
-
 python trainer1-colm.py
-
 python trainer1-smci.py
+```
 
-### Stage 2: Prediction-layer fusion
+These scripts independently train prediction models for ERA5, CoLM, and SMCI products.
 
+---
+
+## Step 2: Train the Stage-2 fusion model
+
+```bash
 python trainer_stage2.py
+```
 
-### Evaluation
+This script trains the prediction-layer fusion model using consensus feature learning.
 
-python eval.py  #for stage1
+---
 
-python eval_stage2.py #for stage2
+## Step 3: Evaluate the models
+
+### Evaluate Stage-1 models
+
+```bash
+python eval.py
+```
+
+### Evaluate Stage-2 fusion model
+
+```bash
+python eval_stage2.py
+```
+
+---
+
 
 ## Additional scripts
 
